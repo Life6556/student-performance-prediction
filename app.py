@@ -9,229 +9,93 @@ st.set_page_config(
     page_icon="🎓",
     layout="centered"
     )
-
-
 st.markdown("""
 <style>
-
-/* ===============================
-   1. Main App Background
-================================= */
-
-.stApp {
-    background-color: #f2f2f2;
-    color: #000000;
+.stApp, [data-testid="stAppViewContainer"], [data-testid="stHeader"] {
+    background-color: #f0f2f6 !important; 
 }
 
-/* Header and Toolbar Background */
-
-header[data-testid="stHeader"] {
-    background-color: #f2f2f2 !important;
-}
-
-[data-testid="stToolbar"] {
-    background-color: #f2f2f2 !important;
-}
-
-[data-testid="stDecoration"] {
-    background-color: #f2f2f2 !important;
-}
-
-/* Main Container */
-
-.block-container {
-    max-width: 1050px;
-    padding-top: 2rem;
-    padding-bottom: 3rem;
-}
-
-/* ===============================
-   2. General Text Styling
-================================= */
-
-h1, h2, h3, h4, h5, h6 {
-    color: #111111 !important;
-    font-weight: 700 !important;
-}
-
-p, label, span {
-    color: #000000;
-}
-
-/* Main Title */
-
-h1 {
-    font-size: 2.5rem !important;
-    margin-bottom: 2rem !important;
-}
-
-/* Input Labels */
-
-.stSelectbox label,
-.stSlider label,
-.stNumberInput label,
-.stTextInput label {
-    font-size: 1.35rem !important;
-    font-weight: 600 !important;
-    color: #000000 !important;
-}
-
-/* ===============================
-   3. Dropdown Styling
-================================= */
-
-/* Dropdown Box */
-
-div[data-baseweb="select"] > div {
+[data-testid="stForm"] {
     background-color: #ffffff !important;
-    color: #000000 !important;
-    border: 1px solid #cccccc !important;
-    border-radius: 10px !important;
-    min-height: 60px !important;
+    padding: 40px !important; 
+    border-radius: 12px !important;
+    border: 1px solid #e5e5e5 !important;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08) !important;
+    margin-top: 10px;
 }
 
-/* Selected Dropdown Text */
+h3, [data-testid="stMarkdownContainer"] h3 {
+    text-align: center !important;
+    font-weight: 800 !important;
+    color: #111111 !important;
+    font-size: 28px !important; 
+    padding-bottom: 20px !important;
+}
+
+[data-testid="stWidgetLabel"] p {
+    font-weight: 700 !important;
+    color: #222222 !important;
+    font-size: 18px !important; 
+    margin-bottom: 5px !important;
+}
+
+div[data-baseweb="select"] > div, 
+div[data-testid="stNumberInput"] input {
+    background-color: #fcfcfc !important;
+    border: 1px solid #cccccc !important;
+    border-radius: 6px !important;
+    color: #000000 !important;
+    font-size: 18px !important; 
+}
 
 div[data-baseweb="select"] span {
-    color: #000000 !important;
-    font-size: 1.1rem !important;
+    font-size: 18px !important;
 }
 
-/* Dropdown Arrow */
-
-div[data-baseweb="select"] svg {
-    fill: #000000 !important;
+[data-testid="stFormSubmitButton"] button {
+    background-color: #5d9b5d !important;
+    color: #ffffff !important;
+    border-radius: 8px !important;
+    border: none !important;
+    height: 55px !important; 
+    width: 100% !important;
+    margin-top: 10px !important;
 }
 
-/* Dropdown Menu */
-
-ul[data-baseweb="menu"] {
-    background-color: #ffffff !important;
+[data-testid="stFormSubmitButton"] button p {
+    font-size: 22px !important;
+    font-weight: 700 !important;
+    color: #ffffff !important;
 }
 
-/* Dropdown Options */
-
-li[role="option"] {
-    background-color: #ffffff !important;
-    color: #000000 !important;
-    font-size: 1rem !important;
+[data-testid="stFormSubmitButton"] button:hover {
+    background-color: #4a7d4a !important;
+    box-shadow: 0 4px 10px rgba(74, 125, 74, 0.4) !important;
 }
 
-/* Dropdown Hover */
-
-li[role="option"]:hover {
-    background-color: #e8f5e9 !important;
-}
-
-/* ===============================
-   4. Number Input Styling
-================================= */
-
-div[data-baseweb="input"] {
-    background-color: #ffffff !important;
+[data-testid="stMetric"] {
+    text-align: center !important;
+    margin-top: 20px !important;
+    padding: 15px !important;
+    background-color: #f8f9fa !important;
     border-radius: 8px !important;
 }
 
-div[data-baseweb="input"] input {
+[data-testid="stMetricLabel"] p {
     color: #000000 !important;
-    background-color: #ffffff !important;
-    font-size: 1.1rem !important;
-}
-
-/* ===============================
-   5. Slider Styling
-================================= */
-
-div[data-testid="stSlider"] {
-    color: #000000 !important;
-}
-
-/* Slider Value */
-
-div[data-testid="stSlider"] [data-testid="stMarkdownContainer"] {
-    color: #000000 !important;
-}
-
-/* ===============================
-   6. Submit Button Styling
-================================= */
-
-div.stButton > button {
-    background-color: #198754 !important;
-    color: #ffffff !important;
-    border: none !important;
-    border-radius: 10px !important;
-    padding: 12px 30px !important;
-    font-size: 1.1rem !important;
-    font-weight: 600 !important;
-    transition: 0.3s ease;
-}
-
-/* Button Hover */
-
-div.stButton > button:hover {
-    background-color: #146c43 !important;
-    color: #ffffff !important;
-    border: none !important;
-}
-
-/* Button Text */
-
-div.stButton > button p {
-    color: #ffffff !important;
-}
-
-/* ===============================
-   7. Prediction Result Styling
-================================= */
-
-div[data-testid="stMetric"] {
-    background-color: #ffffff;
-    padding: 20px;
-    border-radius: 12px;
-    border: 1px solid #dddddd;
-}
-
-div[data-testid="stMetricLabel"] {
-    color: #333333 !important;
-    font-size: 1.2rem !important;
-    font-weight: 600 !important;
-}
-
-div[data-testid="stMetricValue"] {
-    color: #198754 !important;
-    font-size: 2.2rem !important;
+    font-size: 22px !important;
     font-weight: 700 !important;
+    justify-content: center !important;
 }
 
-/* ===============================
-   8. Horizontal Divider
-================================= */
-
-hr {
-    border-color: #cccccc !important;
+[data-testid="stMetricValue"], 
+[data-testid="stMetricValue"] > div {
+    color: #000000 !important;
+    font-size: 36px !important;
+    font-weight: 900 !important;
 }
-
-/* ===============================
-   9. Responsive Design
-================================= */
-
-@media screen and (max-width: 768px) {
-
-    h1 {
-        font-size: 1.8rem !important;
-    }
-
-    .block-container {
-        padding-left: 1rem;
-        padding-right: 1rem;
-    }
-
-}
-
 </style>
 """, unsafe_allow_html=True)
-
 
 with st.form("student_prediction_form"):
 
