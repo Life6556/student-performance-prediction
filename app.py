@@ -169,6 +169,10 @@ if submitted:
 
         predict_pipeline=PredictPipeline()
         math_score=predict_pipeline.predict(pred_df)[0]
+        if math_score > 100:
+            math_score = 100.0
+        elif math_score < 0:
+            math_score = 0.0
         st.metric(
             label="Predicted Mathematics Score",
             value=f"{math_score:.2f} / 100"
