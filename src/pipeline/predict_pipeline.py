@@ -11,7 +11,7 @@ class PredictPipeline:
     def predict(self,input_df):
         try:
             model_path=os.path.join("artifacts","model.pkl")
-            preprocessor_path=os.path.join("artifacts","preprocessor.pkl")
+            preprocessor_path=os.path.join('artifacts','processor.pkl')
             model=load_object(model_path)
             preprocessor=load_object(preprocessor_path)
             transformed_input_data=preprocessor.transform(input_df)
