@@ -148,6 +148,32 @@ header[data-testid="stHeader"] {
     box-shadow: none !important;
 }
 </style>
+/* Dropdown background */
+div[data-baseweb="select"] > div {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    border: 1px solid #cccccc !important;
+}
+
+/* Dropdown selected text */
+div[data-baseweb="select"] span {
+    color: #000000 !important;
+}
+
+/* Dropdown arrow */
+div[data-baseweb="select"] svg {
+    fill: #000000 !important;
+}
+
+/* Dropdown menu */
+ul[data-baseweb="menu"] {
+    background-color: #ffffff !important;
+}
+
+li[role="option"] {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+}
 """, unsafe_allow_html=True)
 
 
